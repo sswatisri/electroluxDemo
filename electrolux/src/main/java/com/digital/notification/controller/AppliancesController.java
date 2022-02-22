@@ -19,14 +19,16 @@ public class AppliancesController {
 	@Autowired
 	ApplianceService applianceService;
 	
-	// load all appliances status along with customer details
+	
 	@PostMapping(value="/connection/status") 
 	public List<CustomerApplianceStatus> getApplianceConnectionStatus(){
+		// load all appliances status along with customer details
 		return applianceService.getApplianceConnectionStatus();
 	}
-	// update appliance status by fake notification
+	
 	@PostMapping(value="/connection/update")
 	public void updateApplianceConnection(@RequestBody ApplianceInfo applianceInfo){
+		// update appliance status by fake notification
 		applianceService.updateApplianceConnection(applianceInfo);
 	}
 	
