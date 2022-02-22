@@ -1,0 +1,32 @@
+Datastore DDL and DML:
+-----------------------
+create database electroluxdb;
+use electroluxdb;
+CREATE TABLE appliancedetails (
+  appliance_id varchar(50) DEFAULT NULL,
+  customer_id int DEFAULT NULL,
+  factory_number varchar(45) DEFAULT NULL,
+  status varchar(30) DEFAULT NULL,
+  id bigint NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE customer (
+  customer_id int NOT NULL,
+  customer_name varchar(60) DEFAULT NULL,
+  customer_address varchar(150) DEFAULT NULL,
+  id bigint NOT NULL,
+  PRIMARY KEY (customer_id)
+);
+
+INSERT INTO customer VALUES (101,'Kalles Grustransporter','Cementvagen 8, 111 11 Sodertalje',1),(102,'Johans Bulk','Balkvagen 12, 222 22 Stockholm',2),(103,'Haralds VÃ¤rdetransporter','BudgetvÃ¤gen 1, 333 33 Uppsala',3);
+
+INSERT INTO appliancedetails VALUES ('VLUR4X20009048066',101,'GHI789','Disconnected',1),('VLUR4X20009093588',101,'DEF456','Connected',2),('YS2R4X20005399401',101,'ABC123','Disconnected',3),('YS2R4X20005388011',102,'JKL012','Connected',4),('YS2R4X20009048066',103,'PQR678','Connected',5),('YS2R4X20005387055',103,'STU901','Disconnected',6);
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Notes:
+    - electrolux.postman_collection.json is postman collection to create fake notification and add it into the queue which will send connection status in every 60 sec.
+    - FakeStatusGeneratorController is used to create fake connection status for appliances 
+    - FakeNotificationService will queued the fake connections of the appliances and send status in every 60 sec to the  rest endpoint http://localhost:8080/appliances/connection/update to update status.
+    - AppliancesController controller has end point /appliances/connection/status , whihc can show connection status of appliances along with customer details. 
