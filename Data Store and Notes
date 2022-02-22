@@ -26,7 +26,7 @@ INSERT INTO appliancedetails VALUES ('VLUR4X20009048066',101,'GHI789','Disconnec
 ---------------------------------------------------------------------------------------------------------------------------------
 
 Notes:
-    - electrolux.postman_collection.json is postman collection to create fake notification and add it into the queue which will send connection status in every 60 sec.
+    - electrolux.postman_collection.json (electroluxDemo/electrolux/electrolux.postman_collection.json) is postman collection to create fake notification and add it into the queue which will send connection status in every 60 sec.
     - FakeStatusGeneratorController is used to create fake connection status for appliances 
     - FakeNotificationService will queued the fake connections of the appliances and send status in every 60 sec to the  rest endpoint http://localhost:8080/appliances/connection/update to update status.
     - AppliancesController controller has end point /appliances/connection/status , whihc can show connection status of appliances along with customer details. 
