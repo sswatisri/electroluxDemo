@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "f7e89f2a-4d77-4e95-80e4-abff9f160900",
+		"name": "electrolux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loadConnectionStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appliances/connection/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appliances",
+						"connection",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fakeNotification1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"customerId\":101,\r\n\"applianceId\":\"VLUR4X20009093588\",\r\n\"status\":\"Connected\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appliances/connection/fakenotification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appliances",
+						"connection",
+						"fakenotification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fakeNotification2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"customerId\":103,\r\n\"applianceId\":\"YS2R4X20009048066\",\r\n\"status\":\"Connected\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appliances/connection/fakenotification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appliances",
+						"connection",
+						"fakenotification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fakeNotification3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"customerId\":102,\r\n\"applianceId\":\"YS2R4X20005388011\",\r\n\"status\":\"Connected\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appliances/connection/fakenotification",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appliances",
+						"connection",
+						"fakenotification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
